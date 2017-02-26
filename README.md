@@ -61,7 +61,7 @@ Here's an example of my output for this step.
 
 The code for this step is contained in the first section "Color transforms & gradients." of the IPython notebook located in "./solution.ipynb".
 
-The code for my perspective transform includes a function called `warp()`, which appears in lines 1 through 8 in the file `example.py` (output_images/examples/example.py) (or, for example, in the 3rd code cell of the IPython notebook).  The `warper()` function takes as inputs an image (`img`), as well as source (`src`) and destination (`dst`) points.  I chose the hardcode the source and destination points in the following manner:
+The code for my perspective transform includes a function called `warp()` which takes as inputs an image (`img`). I chose to hardcode source and destination points in the function itself in the following manner:
 
 ```
 src = np.float32(
