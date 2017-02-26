@@ -18,7 +18,7 @@ The goals / steps of this project are the following:
 [image1]: ./output_images/undistort_output.png "Undistorted"
 [image2]: ./output_images/transformed.png "Road Transformed"
 [image3]: ./output_images/binary.png "Binary Example"
-[image4]: ./examples/warped_straight_lines.jpg "Warp Example"
+[image4]: ./output_images/warped_straight_lines.png "Warp Example"
 [image5]: ./examples/color_fit_lines.jpg "Fit Visual"
 [image6]: ./examples/example_output.jpg "Output"
 [video1]: ./project_video.mp4 "Video"
@@ -45,7 +45,7 @@ I then used the output `objpoints` and `imgpoints` to compute the camera calibra
 Applying the undistortion transformation to a test image yields the following result (left distorted, right corrected):
 ![alt text][image2]
 
-####2. Thresholded binary image.
+####2. Thresholded binary image using color and gradiend thresholds.
 
 The code for this step is contained in the first section "Color transforms & gradients." of the IPython notebook located in "./solution.ipynb".
 
@@ -57,9 +57,11 @@ Here's an example of my output for this step.
 
 ![alt text][image3]
 
-####3. Describe how (and identify where in your code) you performed a perspective transform and provide an example of a transformed image.
+####3. Perspective transform.
 
-The code for my perspective transform includes a function called `warper()`, which appears in lines 1 through 8 in the file `example.py` (output_images/examples/example.py) (or, for example, in the 3rd code cell of the IPython notebook).  The `warper()` function takes as inputs an image (`img`), as well as source (`src`) and destination (`dst`) points.  I chose the hardcode the source and destination points in the following manner:
+The code for this step is contained in the first section "Color transforms & gradients." of the IPython notebook located in "./solution.ipynb".
+
+The code for my perspective transform includes a function called `warp()`, which appears in lines 1 through 8 in the file `example.py` (output_images/examples/example.py) (or, for example, in the 3rd code cell of the IPython notebook).  The `warper()` function takes as inputs an image (`img`), as well as source (`src`) and destination (`dst`) points.  I chose the hardcode the source and destination points in the following manner:
 
 ```
 src = np.float32(
