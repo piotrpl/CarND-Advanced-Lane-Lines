@@ -17,9 +17,9 @@ The goals / steps of this project are the following:
 
 [image1]: ./output_images/undistort_output.png "Undistorted"
 [image2]: ./output_images/transformed.png "Road Transformed"
-[image3]: ./output_images/binary.png "Binary Example"
-[image4]: ./output_images/warped_straight_lines.png "Warp Example"
-[image5]: ./examples/color_fit_lines.jpg "Fit Visual"
+[image3]: ./output_images/binary.png "Binary"
+[image4]: ./output_images/warped_straight_lines.png "Warped"
+[image5]: ./output_images/lane_line_pixels.png "Lane line pixels"
 [image6]: ./examples/example_output.jpg "Output"
 [video1]: ./project_video.mp4 "Video"
 
@@ -91,9 +91,15 @@ I verified that my perspective transform was working as expected by drawing the 
 
 ####4. Describe how (and identify where in your code) you identified lane-line pixels and fit their positions with a polynomial?
 
-Then I did some other stuff and fit my lane lines with a 2nd order polynomial kinda like this:
+The code for this step is contained in the first section "Identiffying lane-line pixels and fittig their positions with a polynomial." of the IPython notebook located in "./solution.ipynb".
+
+In order to decide which pixels of the binary image are part of the lines and which belong to the left and right line I have used "Peaks in histogram approach". In this approach the two most prominent peaks in the histogram are indicators of the x-position of the base of the lane lines. Once the peaks are identified I use sliding windows, placed around the lines centers, to identify where the line most likely goes from the bottom to the top of the image.
 
 ![alt text][image5]
+
+When the lines have been found the first time, the full sliding windows calculation is no longer needed. Instead, using the primarly identified lines as a basis, I search within a margin of the previous line position.
+
+MENTION LINE CLASS USAGE IN THE VIDEO PIPELINE
 
 ####5. Describe how (and identify where in your code) you calculated the radius of curvature of the lane and the position of the vehicle with respect to center.
 
@@ -121,3 +127,6 @@ Here's a [link to my video result](./project_video.mp4)
 
 Here I'll talk about the approach I took, what techniques I used, what worked and why, where the pipeline might fail and how I might improve it if I were going to pursue this project further.  
 
+
+Add a counter to reset the search every X times (Note that the counter gets reset if the line is detected again before reaching five.)
+Add checkes for lines parallel, curvature etc.
