@@ -29,7 +29,7 @@ The goals / steps of this project are the following:
 ---
 ###Camera Calibration
 
-####1. Briefly state how you computed the camera matrix and distortion coefficients. Provide an example of a distortion corrected calibration image.
+####1. Camera matrix and distortion coefficients computation.
 
 The code for this step is contained in the first section "Camera calibration & distortion correction." of the IPython notebook located in "./solution.ipynb".  
 
@@ -89,7 +89,7 @@ I verified that my perspective transform was working as expected by drawing the 
 
 ![alt text][image4]
 
-####4. Describe how (and identify where in your code) you identified lane-line pixels and fit their positions with a polynomial?
+####4. Identiffying lane-line pixels and fittig their positions with a polynomial.
 
 The code for this step is contained in the first section "Identiffying lane-line pixels and fittig their positions with a polynomial." of the IPython notebook located in "./solution.ipynb".
 
@@ -101,7 +101,7 @@ When the lines have been found the first time, the full sliding windows calculat
 
 MENTION LINE CLASS USAGE IN THE VIDEO PIPELINE
 
-####5. Describe how (and identify where in your code) you calculated the radius of curvature of the lane and the position of the vehicle with respect to center.
+####5. Radius of curvature of the lane and the position of the vehicle with respect to center.
 
 I did this in lines # through # in my code in `my_other_file.py`
 
