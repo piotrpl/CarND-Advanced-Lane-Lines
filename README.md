@@ -19,8 +19,8 @@ The goals / steps of this project are the following:
 [image2]: ./output_images/transformed.png "Road Transformed"
 [image3]: ./output_images/binary.png "Binary"
 [image4]: ./output_images/warped_straight_lines.png "Warped"
-[image5]: ./output_images/lane_line_pixels.png "Lane line pixels"
-[image6]: ./examples/example_output.jpg "Output"
+[image5]: ./output_images/lane_line_windows.png "Lane line windows"
+[image6]: ./output_images/plotted.png "Plotted"
 [video1]: ./project_video.mp4 "Video"
 
 ## [Rubric](https://review.udacity.com/#!/rubrics/571/view) Points
@@ -103,11 +103,18 @@ MENTION LINE CLASS USAGE IN THE VIDEO PIPELINE
 
 ####5. Radius of curvature of the lane and the position of the vehicle with respect to center.
 
-I did this in lines # through # in my code in `my_other_file.py`
+The code for this step is contained in the first section "Radius of curvature of the lane and the position of the vehicle with respect to center." of the IPython notebook located in "./solution.ipynb".
 
-####6. Provide an example image of your result plotted back down onto the road such that the lane area is identified clearly.
+Radius of curvature of the lane is calculated as a mean of the curvatures of the right and left lines.
+During calculation fo the radius of curvature for each individual line I convert the space from pixes to the real world dimenions. Then I calculate the plynomial fit in that sapce.
 
-I implemented this step in lines # through # in my code in `yet_another_file.py` in the function `map_lane()`.  Here is an example of my result on a test image:
+The distance from the center of the lane is computed by measuring the distance to each line and computin the position assuming the lane has a given fixed width of 3.7m.
+
+####6. Example result plotted back down onto the road.
+
+The code for this step is contained in the first section "Example result plotted back down onto the road." of the IPython notebook located in "./solution.ipynb".
+
+Here is an example of my result on a test image:
 
 ![alt text][image6]
 
