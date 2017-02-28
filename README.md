@@ -20,7 +20,7 @@ The goals / steps of this project are the following:
 [image3]: ./output_images/binary.png "Binary"
 [image4]: ./output_images/warped_straight_lines.png "Warped"
 [image5]: ./output_images/lane_line_windows.png "Lane line windows"
-[image6]: ./output_images/plotted_road.png "Plotted"
+[image6]: ./output_images/plotted.png "Plotted"
 
 ## [Rubric](https://review.udacity.com/#!/rubrics/571/view) Points
 ###Here I will consider the rubric points individually and describe how I addressed each point in my implementation.  
