@@ -21,7 +21,6 @@ The goals / steps of this project are the following:
 [image4]: ./output_images/warped_straight_lines.png "Warped"
 [image5]: ./output_images/lane_line_windows.png "Lane line windows"
 [image6]: ./output_images/plotted_road.png "Plotted"
-[video1]: https://www.dropbox.com/s/emzuzc7fdsxu6er/result_project_video.mp4?dl=0 "Video"
 
 ## [Rubric](https://review.udacity.com/#!/rubrics/571/view) Points
 ###Here I will consider the rubric points individually and describe how I addressed each point in my implementation.  
@@ -124,7 +123,7 @@ Here is an example of my result on a test image:
 
 ####1. Provide a link to your final video output.  Your pipeline should perform reasonably well on the entire project video (wobbly lines are ok but no catastrophic failures that would cause the car to drive off the road!).
 
-Here's a [link to my video result](./project_video.mp4)
+Here's a [link to my video result](https://www.dropbox.com/s/emzuzc7fdsxu6er/result_project_video.mp4?dl=0)
 
 ---
 
