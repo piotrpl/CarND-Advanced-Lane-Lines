@@ -129,10 +129,11 @@ Here's a [link to my video result](https://www.dropbox.com/s/emzuzc7fdsxu6er/res
 
 ###Discussion
 
-####1. Briefly discuss any problems / issues you faced in your implementation of this project.  Where will your pipeline likely fail?  What could you do to make it more robust?
+####Approach and future considerations
 
-Here I'll talk about the approach I took, what techniques I used, what worked and why, where the pipeline might fail and how I might improve it if I were going to pursue this project further.  
-
-
-Add a counter to reset the search every X times (Note that the counter gets reset if the line is detected again before reaching five.)
-Add checkes for lines parallel, curvature etc.
+1. Finding right values for color transforms and gradients was very time consuming and required number of manual adjustements in order to find "good enough" values.
+2. Using Line class was very helpful in smoothing jittering of the plotted area. This step required quite some time though.
+3. Current implementation will most likely fail as soon as there is multiple lines in a lane. This is due to the lack of certain checks that could prove to be very useful:
+* if detected lines are parallel
+* if detected lines are separated by the expected distance
+* is the curvature of both lines equal or close to be equal
