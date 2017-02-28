@@ -30,7 +30,7 @@ The goals / steps of this project are the following:
 
 ####1. Camera matrix and distortion coefficients computation.
 
-The code for this step is contained in the first section "Camera calibration & distortion correction." of the IPython notebook located in "./solution.ipynb".  
+The code for this step is contained in the first section "Camera calibration & distortion correction." of the IPython notebook located in "./single_images_pipeline.ipynb".  
 
 I start by preparing "object points", which will be the (x, y, z) coordinates of the chessboard corners in the world. Here I am assuming the chessboard is fixed on the (x, y) plane at z=0, such that the object points are the same for each calibration image.  Thus, `objp` is just a replicated array of coordinates, and `objpoints` will be appended with a copy of it every time I successfully detect all chessboard corners in a test image.  `imgpoints` will be appended with the (x, y) pixel position of each of the corners in the image plane with each successful chessboard detection.  
 
@@ -46,7 +46,7 @@ Applying the undistortion transformation to a test image yields the following re
 
 ####2. Thresholded binary image using color and gradiend thresholds.
 
-The code for this step is contained in the first section "Color transforms & gradients." of the IPython notebook located in "./solution.ipynb".
+The code for this step is contained in the first section "Color transforms & gradients." of the IPython notebook located in "./single_images_pipeline.ipynb".
 
 I used a combination of color and gradient thresholds to generate a binary image. For the color thresholding I worked in HLS space where I used the L and S channels. S channel is used for the saturation threshold and the L channel for a luminosity threshold filter. 
 For the gradient thresholds I used Sobel function to check for horizontal and vertical gradients. Combination of those two methods yilded the best results. 
@@ -58,9 +58,9 @@ Here's an example of my output for this step.
 
 ####3. Perspective transform.
 
-The code for this step is contained in the first section "Color transforms & gradients." of the IPython notebook located in "./solution.ipynb".
+The code for this step is contained in the first section "Perspective transform." of the IPython notebook located in "./single_images_pipeline.ipynb".
 
-The code for my perspective transform includes a function called `warp()` which takes as inputs an image (`img`), as well as source (`src`) and destination (`dst`) points. I chose the hardcode the source and destination points in the following manner:
+The code for my perspective transform includes a function called `warp()` which takes as inputs an image (`img`). I chose the hardcode the source and destination points in the following manner:
 
 ```
 src = np.float32(
@@ -90,7 +90,7 @@ I verified that my perspective transform was working as expected by drawing the 
 
 ####4. Identiffying lane-line pixels and fittig their positions with a polynomial.
 
-The code for this step is contained in the first section "Identiffying lane-line pixels and fittig their positions with a polynomial." of the IPython notebook located in "./solution.ipynb".
+The code for this step is contained in the first section "Identiffying lane-line pixels and fittig their positions with a polynomial." of the IPython notebook located in "./single_images_pipeline.ipynb".
 
 In order to decide which pixels of the binary image are part of the lines and which belong to the left and right line I have used "Peaks in histogram approach". In this approach the two most prominent peaks in the histogram are indicators of the x-position of the base of the lane lines. Once the peaks are identified I use sliding windows, placed around the lines centers, to identify where the line most likely goes from the bottom to the top of the image.
 
@@ -98,11 +98,9 @@ In order to decide which pixels of the binary image are part of the lines and wh
 
 When the lines have been found the first time, the full sliding windows calculation is no longer needed. Instead, using the primarly identified lines as a basis, I search within a margin of the previous line position.
 
-MENTION LINE CLASS USAGE IN THE VIDEO PIPELINE
-
 ####5. Radius of curvature of the lane and the position of the vehicle with respect to center.
 
-The code for this step is contained in the first section "Radius of curvature of the lane and the position of the vehicle with respect to center." of the IPython notebook located in "./solution.ipynb".
+The code for this step is contained in the first section "Radius of curvature of the lane and the position of the vehicle with respect to center." of the IPython notebook located in "./single_images_pipeline.ipynb".
 
 Radius of curvature of the lane is calculated as a mean of the curvatures of the right and left lines.
 During calculation fo the radius of curvature for each individual line I convert the space from pixes to the real world dimenions. Then I calculate the plynomial fit in that sapce.
@@ -111,7 +109,7 @@ The distance from the center of the lane is computed by measuring the distance t
 
 ####6. Example result plotted back down onto the road.
 
-The code for this step is contained in the first section "Example result plotted back down onto the road." of the IPython notebook located in "./solution.ipynb".
+The code for this step is contained in the first section "Example result plotted back down onto the road." of the IPython notebook located in "./single_images_pipeline.ipynb".
 
 Here is an example of my result on a test image:
 
@@ -121,7 +119,9 @@ Here is an example of my result on a test image:
 
 ###Pipeline (video)
 
-####1. Provide a link to your final video output.  Your pipeline should perform reasonably well on the entire project video (wobbly lines are ok but no catastrophic failures that would cause the car to drive off the road!).
+####1. Final video output.
+
+The code for this step is contained in the IPython notebook located in "./video_pipeline.ipynb".
 
 Here's a [link to my video result](https://www.dropbox.com/s/emzuzc7fdsxu6er/result_project_video.mp4?dl=0)
 
